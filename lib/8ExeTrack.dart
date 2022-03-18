@@ -37,7 +37,7 @@ class _page8State extends State<page8> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: const EdgeInsets.fromLTRB(30, 20, 30, 50),
         child: Column(
           children: [
             Center(
@@ -58,7 +58,7 @@ class _page8State extends State<page8> {
               ),
             ),
             SizedBox(
-              height: 60,
+              height: 30,
             ),
             Column(
               children: [
@@ -94,9 +94,7 @@ class _page8State extends State<page8> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 150,
-            ),
+            Spacer(),
             Center(
               child: Container(
                 width: 330,

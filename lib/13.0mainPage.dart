@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '13.1Home.dart';
 import '13.2Activity.dart';
@@ -24,23 +25,7 @@ class _page13State extends State<page13> {
   ];
 
   int Index = 0;
-
-  // DateTime date = DateTime.now();
-  // String _date = "Today";
-  // int Day = 0;
-  // int month = 0;
-  // int dayInThisMonth = 0;
-
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Day = date.day;
-  //   month = date.month;
-  //   var firstDayThisMonth = new DateTime(date.year, date.month, date.day);
-  //   var firstDayNextMonth = new DateTime(firstDayThisMonth.year, firstDayThisMonth.month + 1, firstDayThisMonth.day);
-  //   dayInThisMonth = firstDayNextMonth.difference(firstDayThisMonth).inDays;
-  // }
+  var shouldPop;
 
   @override
   Widget build(BuildContext context) {
@@ -56,34 +41,39 @@ class _page13State extends State<page13> {
         context: context,
         builder: (context) => AlertDialog(
           title: Text(
-            "Do you want to exit app?", 
-            style: TextStyle(color: Colors.white),),
-          backgroundColor: Colors.black54,
+            "Do you want to exit?",
+            style: TextStyle(color: Colors.white, fontSize: 22),
+          ),
+          backgroundColor: Color(0xFF1A1728),
           actions: [
             ElevatedButton(
-              onPressed: () => Navigator.pop(context, true),
+              onPressed: () {
+                setState(() {SystemNavigator.pop();});
+                },
               child: Text(
-                "Yes",
+                "Exit",
                 style: TextStyle(
-                    color: Color(0xFF07D7B7),
-                    fontSize: 22
+                  color: Color(0xFF07D7B7),
+                  fontSize: 15
                 ),
               ),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                backgroundColor: MaterialStateProperty.all(Color(0xFF2D2943),),
               ),
             ),
             ElevatedButton(
-                onPressed: () => Navigator.pop(context, false),
+                onPressed: () {
+                  setState(() {Navigator.of(context).pop(false);});
+                },
                 child: Text(
-                  "No",
+                  "Cancel",
                   style: TextStyle(
                     color: Color(0xFF07D7B7),
-                    fontSize: 22
+                    fontSize: 15
                   ),
                 ),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                backgroundColor: MaterialStateProperty.all(Color(0xFF2D2943),),
               ),
             ),
           ],
@@ -93,7 +83,7 @@ class _page13State extends State<page13> {
 
     return WillPopScope(
       onWillPop: () async{
-        final shouldPop = await showWarning(context);
+        shouldPop = await showWarning(context);
         return shouldPop ?? false;
       },
       child: Scaffold(
@@ -111,6 +101,12 @@ class _page13State extends State<page13> {
               fontSize: 20
             ),
           ),
+          actions: [
+            IconButton(
+                onPressed: () => showWarning(context),
+                icon: Icon(Icons.logout),
+            )
+          ],
           centerTitle: true,
           elevation: 0,
         ),

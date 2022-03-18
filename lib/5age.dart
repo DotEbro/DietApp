@@ -30,6 +30,13 @@ class _page5State extends State<page5> {
   bool CM = false;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    dateCon.text = DateFormat.yMMMMd('en_US').format(pickedDate);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -39,7 +46,7 @@ class _page5State extends State<page5> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
         child: Column(
           children: [
             Center(
@@ -60,21 +67,16 @@ class _page5State extends State<page5> {
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(
-              height: 100,
-            ),
+            SizedBox(height: 50,),
             Center(
               child: TextField(
                 controller: dateCon,
+                textAlign: TextAlign.center,
                 decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.calendar_today,
-                    color: Colors.white,
-                  ),
-                  labelText: "Enter Date",
                   labelStyle: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
+
                   ),
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
@@ -86,7 +88,7 @@ class _page5State extends State<page5> {
                       initialDate: DateTime.now(),
                       firstDate: DateTime(1970),
                       lastDate: DateTime(2030)))!;
-                  DOB = DateFormat('dd/MM/yyyy').format(pickedDate);
+                  DOB = DateFormat.yMMMMd('en_US').format(pickedDate);
                   setState(() {
                     age = calculateAge(pickedDate);
                     dateCon.text = DOB;
@@ -98,9 +100,7 @@ class _page5State extends State<page5> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 310,
-            ),
+            Spacer(),
             Center(
               child: Container(
                 width: 330,

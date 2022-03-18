@@ -40,11 +40,11 @@ class _page10State extends State<page10> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
         child: Column(
           children: [
             Text(
-              "What is your goal?",
+              "Do you track net or total carbs?",
               style: TextStyle(fontSize: 24, color: Colors.white),
               textAlign: TextAlign.center,
             ),
@@ -59,7 +59,7 @@ class _page10State extends State<page10> {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Column(
               children: [
@@ -100,9 +100,7 @@ class _page10State extends State<page10> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 160,
-            ),
+            Spacer(),
             Center(
               child: Container(
                 width: 330,

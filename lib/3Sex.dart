@@ -30,7 +30,7 @@ class _page3State extends State<page3> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
         child: Column(
           children: [
             Center(
@@ -52,36 +52,30 @@ class _page3State extends State<page3> {
             SizedBox(
               height: 80,
             ),
-            Column(
-              children: [
-                RadioCard(
-                    Title: "Male",
-                    Value: 1,
-                    ICON: Icons.male,
-                    groupValue: _isSelected,
-                    ONCHANGE: (int _value){
-                      setState(() {
-                        _isSelected = _value;
-                      });
-                    },
-                ),
-                SizedBox(height: 20,),
-                RadioCard(
-                  Title: "Female",
-                  Value: 2,
-                  ICON: Icons.female,
-                  groupValue: _isSelected,
-                  ONCHANGE: (int _value){
-                    setState(() {
-                      _isSelected = _value;
-                    });
-                  },
-                )
-              ],
+            RadioCard(
+                Title: "Male",
+                Value: 1,
+                ICON: Icons.male,
+                groupValue: _isSelected,
+                ONCHANGE: (int _value){
+                  setState(() {
+                    _isSelected = _value;
+                  });
+                },
             ),
-            SizedBox(
-              height: 210,
+            SizedBox(height: 20,),
+            RadioCard(
+              Title: "Female",
+              Value: 2,
+              ICON: Icons.female,
+              groupValue: _isSelected,
+              ONCHANGE: (int _value){
+                setState(() {
+                  _isSelected = _value;
+                });
+              },
             ),
+            Spacer(),
             Center(
               child: Container(
                 width: 330,

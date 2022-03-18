@@ -24,11 +24,11 @@ class _page2State extends State<page2> {
           backgroundColor: const Color(0xFF1A1728),
           elevation: 0,
         ),
-        body: Form(
-          autovalidateMode: AutovalidateMode.always,
-          key: formKey,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        body: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
+          child: Form(
+            autovalidateMode: AutovalidateMode.always,
+            key: formKey,
             child: Column(
               children: [
                 Center(
@@ -47,9 +47,7 @@ class _page2State extends State<page2> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(
-                  height: 100,
-                ),
+                Spacer(),
                 Center(
                   child: TextFormField(
                     controller: weightCon,
@@ -120,9 +118,7 @@ class _page2State extends State<page2> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 220,
-                ),
+                Spacer(),
                 Center(
                   child: Container(
                     width: 330,

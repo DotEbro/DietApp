@@ -34,7 +34,7 @@ class _page4State extends State<page4> {
         autovalidateMode: AutovalidateMode.always,
         key: formKey,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
           child: Column(
             children: [
               Center(
@@ -100,9 +100,7 @@ class _page4State extends State<page4> {
                   height: 35,
                 ),
               ),
-              SizedBox(
-                height: 215,
-              ),
+              Spacer(),
               Center(
                 child: Container(
                   width: 330,

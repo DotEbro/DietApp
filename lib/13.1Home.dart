@@ -64,8 +64,15 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
                     height: 400,
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(0,6),
+                          blurRadius: 4,
+                        )
+                      ],
                       borderRadius: BorderRadius.all(Radius.circular(30)),
-                      color: Color(0xAA5A4F46),
+                      color: Color(0x885A4F46),
                     ),
                     child: Row(
                       children: [

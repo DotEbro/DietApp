@@ -6,19 +6,8 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class page6 extends StatefulWidget {
-  int Sex;
-  int height;
-  int wight;
-  double WnH;
-  int Age;
-  page6({
-    Key? key,
-    required this.Sex,
-    required this.WnH,
-    required this.Age,
-    required this.height,
-    required this.wight
-  }) : super(key: key);
+  int Sex; int height; int wight; double WnH; int Age;
+  page6({Key? key, required this.Sex, required this.WnH, required this.Age, required this.height, required this.wight}) : super(key: key);
 
   @override
   _page6State createState() => _page6State();
@@ -29,6 +18,17 @@ class _page6State extends State<page6> {
   int fat = 0;
   TextEditingController fatCon = new TextEditingController();
   final List<Flushbar> flushBars = [];
+  final listItem = [
+    {"fats" : "4-6%", "pic": "images/body1.jpg"},
+    {"fats" : "8-10%", "pic" : "images/body2.jpg"},
+    {"fats" : "12%", "pic" : "images/body3.jpg"},
+    {"fats" : "15%", "pic" : "images/body4.jpg"},
+    {"fats" : "20%", "pic" : "images/body5.jpg"},
+    {"fats" : "25%", "pic" : "images/body6.jpg"},
+    {"fats" : "30%", "pic" : "images/body7.jpg"},
+    {"fats" : "35%", "pic" : "images/body8.jpg"},
+    {"fats" : "40%", "pic" : "images/body9.jpg"},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,308 +39,111 @@ class _page6State extends State<page6> {
         backgroundColor: const Color(0xFF1A1728),
         elevation: 0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-        child: Column(
-          children: [
-            Center(
-              child: const Text(
-                "What is your body fat percentage?",
-                style: TextStyle(fontSize: 24, color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Center(
-              child: const Text(
-                "Please select one that most closely resembles your body type.",
-                style: TextStyle(fontSize: 14, color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Center(
-              child: TextField(
-                controller: fatCon,
-                decoration: InputDecoration(
-                  hintText: "Tap the picture for fat percentage",
-                  hintStyle: TextStyle(color: Colors.grey[600], fontSize: 13),
-                  labelStyle: TextStyle(
-                    fontSize: 30, color: Colors.white,
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white)
-                  ),
-                ),
-                keyboardType: TextInputType.number,
-                style: TextStyle(fontSize: 35, color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body1.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 4;
-                            fatCon.text = "4%";
-                          });
-                        },
-                      ),
-                      Text("4%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body2.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 8;
-                            fatCon.text = "8%";
-                          });
-                        },
-                      ),
-                      Text("8%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body3.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 11;
-                            fatCon.text = "11%";
-                          });
-                        },
-                      ),
-                      Text("11%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body4.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 15;
-                            fatCon.text = "15%";
-                          });
-                        },
-                      ),
-                      Text("15%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body5.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 20;
-                            fatCon.text = "20%";
-                          });
-                        },
-                      ),
-                      Text("20%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body6.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 25;
-                            fatCon.text = "25%";
-                          });
-                        },
-                      ),
-                      Text("25%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body7.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 30;
-                            fatCon.text = "30%";
-                          });
-                        },
-                      ),
-                      Text("30%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body8.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 35;
-                            fatCon.text = "35%";
-                          });
-                        },
-                      ),
-                      Text("35%", style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    children: [
-                      InkWell(
-                        child: Container(
-                          child: Image.asset("images/body9.jpg"),
-                        ),
-                        onTap: (){
-                          setState(() {
-                            fat = 40;
-                            fatCon.text = "40%";
-                          });
-                        },
-                      ),
-                      Text("40%", style: TextStyle(color: Colors.white),)
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-              child: LinearProgressIndicator(
-                backgroundColor: Colors.white,
-                valueColor: AlwaysStoppedAnimation(Colors.blue),
-                value: 0.50,
-              ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Center(
-              child: SizedBox(
-                width: 330,
-                height: 50,
-                child: RaisedButton(
-                  onPressed: (){
-                    if(fat != 0) {
-                      setState(() {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => page7(
-                                  WnH: widget.WnH,
-                                  Age: widget.Age,
-                                  Sex: widget.Sex,
-                                  height: widget.height,
-                                  weight: widget.wight,
-                                )
-                            )
-                        );
-                      });
-                    }
-                    else {
-                      setState(() {
-                        fillError(context);
-                      });
-                    }
-                  },
-                  child: const Text(
-                    'Next',
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
-                  color: const Color(0xFF07D7B7),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(30, 30, 30, 30),
+          child: Column(
+            children: [
+              Center(
+                child: const Text(
+                  "What is your body fat percentage?",
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: 20,
+              ),
+              Center(
+                child: const Text(
+                  "Please select one that most closely resembles your body type.",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: TextField(
+                  controller: fatCon,
+                  decoration: InputDecoration(
+                    hintText: "Tap the picture for fat percentage",
+                    hintStyle: TextStyle(color: Colors.grey[600], fontSize: 13),
+                    labelStyle: TextStyle(
+                      fontSize: 30, color: Colors.white,
+                    ),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white)
+                    ),
+                  ),
+                  keyboardType: TextInputType.number,
+                  style: TextStyle(fontSize: 35, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              GridView.builder(
+                shrinkWrap: true,
+                itemCount: listItem.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                  itemBuilder: (BuildContext context, int index){
+                  return bodyPic((listItem[index]["fats"])!, (listItem[index]["pic"])!);
+                  }
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+                child: LinearProgressIndicator(
+                  backgroundColor: Colors.white,
+                  valueColor: AlwaysStoppedAnimation(Colors.blue),
+                  value: 0.50,
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: SizedBox(
+                  width: 330,
+                  height: 50,
+                  child: RaisedButton(
+                    onPressed: (){
+                      if(fat != 0) {
+                        setState(() {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => page7(
+                                    WnH: widget.WnH,
+                                    Age: widget.Age,
+                                    Sex: widget.Sex,
+                                    height: widget.height,
+                                    weight: widget.wight,
+                                  )
+                              )
+                          );
+                        });
+                      }
+                      else {
+                        setState(() {
+                          fillError(context);
+                        });
+                      }
+                    },
+                    child: const Text(
+                      'Next',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                    color: const Color(0xFF07D7B7),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -366,4 +169,138 @@ class _page6State extends State<page6> {
     newFlushBar.show(context);
     flushBars.add(newFlushBar);
   }
+
+  bodyPic(String Fats, String Image){
+    return AspectRatio(
+        aspectRatio: 1 / 1,
+        child: Container(
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: InkWell(
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                      image: AssetImage(Image),
+                      fit: BoxFit.cover
+                  )
+              ),
+              child: Container(
+                padding: EdgeInsets.only(bottom: 5),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        colors: [
+                          Colors.black.withOpacity(.8),
+                          Colors.black.withOpacity(.03),
+                        ]
+                    )
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      Fats.toString(),
+                      style: TextStyle(
+                        color: Colors.grey[300],
+                        fontSize: 14,
+                        fontFamily: "NoyhR_regular",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            onTap: (){
+              setState(() {
+                if(Fats == "4-6%") {
+                  fatCon.text = "5%";
+                  fat = 5;
+                } else if(Fats == "8-10%") {
+                  fatCon.text = "9%";
+                  fat = 9;
+                } else {
+                  fatCon.text = Fats;
+                  fat = 10;
+                }
+              });
+            },
+          ),
+        )
+    );
+  }
+
 }
+
+// class BodyPic extends StatefulWidget {
+//   final Fats;
+//   final Image;
+//   const BodyPic({Key? key, required this.Fats, required this.Image}) : super(key: key);
+//
+//   @override
+//   State<BodyPic> createState() => _BodyPicState();
+// }
+//
+// class _BodyPicState extends State<BodyPic> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return AspectRatio(
+//       aspectRatio: 1 / 1,
+//       child: Container(
+//         margin: EdgeInsets.all(5),
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(20),
+//         ),
+//         child: InkWell(
+//           child: Container(
+//             decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(10),
+//                 image: DecorationImage(
+//                     image: AssetImage(widget.Image),
+//                     fit: BoxFit.cover
+//                 )
+//             ),
+//             child: Container(
+//               padding: EdgeInsets.only(bottom: 5),
+//               decoration: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(10),
+//                   gradient: LinearGradient(
+//                       begin: Alignment.bottomRight,
+//                       colors: [
+//                         Colors.black.withOpacity(.8),
+//                         Colors.black.withOpacity(.03),
+//                       ]
+//                   )
+//               ),
+//               child: Column(
+//                 mainAxisAlignment: MainAxisAlignment.end,
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+//                 children: [
+//                   Text(
+//                     widget.Fats.toString(),
+//                     style: TextStyle(
+//                       color: Colors.grey[300],
+//                       fontSize: 14,
+//                       fontFamily: "NoyhR_regular",
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//           onTap: (){
+//             setState(() {
+//
+//             });
+//           },
+//         ),
+//       )
+//     );
+//   }
+// }
+
+

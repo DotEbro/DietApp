@@ -36,7 +36,7 @@ class _page7State extends State<page7> {
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+        padding: const EdgeInsets.fromLTRB(30, 30, 30, 50),
         child: Column(
           children: [
             Center(
@@ -57,7 +57,7 @@ class _page7State extends State<page7> {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             Column(
               children: [
@@ -159,9 +159,7 @@ class _page7State extends State<page7> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 120,
-            ),
+            Spacer(),
             ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(5)),
               child: LinearProgressIndicator(

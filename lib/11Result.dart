@@ -38,154 +38,159 @@ class _page11State extends State<page11> {
         backgroundColor: const Color(0xFF1A1728),
         elevation: 0,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30,),
-          Center(
-            child: Text(
-              "Your daily goal recommendation",
-              style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: const Text(
-              "Based on your setting, we calculated the optimal"
-                  " plan for you to achieve your goal!",
-              style: TextStyle(fontSize: 16, color: Colors.white),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Circular_arc(cal: widget.Calories),
-          Padding(
-            padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
-            child: Text(
-              "The percentage of fats are 70, protein 25 and carbs are 5."
-                  " The ingredients which you will consume the are given "
-                  "below in grams.",
-              style: TextStyle(fontSize: 14, color: Colors.grey),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 50),
+          child: Column(
             children: [
-              Container(
-                height: 5,
-                width: 35,
-                decoration: BoxDecoration(
-                  color: Colors.orange[300],
-                  borderRadius: BorderRadius.circular(5),
+              SizedBox(height: 30,),
+              Center(
+                child: Text(
+                  "Your daily goal recommendation",
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(width: 65,),
-              Container(
-                height: 5,
-                width: 35,
-                decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(5),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: const Text(
+                  "Based on your setting, we calculated the optimal"
+                      " plan for you to achieve your goal!",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(width: 65,),
-              Container(
-                height: 5,
-                width: 35,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen[700],
-                  borderRadius: BorderRadius.circular(5),
+              SizedBox(
+                height: 50,
+              ),
+              Circular_arc(cal: widget.Calories),
+              Padding(
+                padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+                child: Text(
+                  "The percentage of fats are 70, protein 25 and carbs are 5."
+                      " The ingredients which you will consume the are given "
+                      "below in grams.",
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 5,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.orange[300],
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                  SizedBox(width: 65,),
+                  Container(
+                    height: 5,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.pink,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                  SizedBox(width: 65,),
+                  Container(
+                    height: 5,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      color: Colors.lightGreen[700],
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    ((widget.Calories * 0.7)~/9).toString() + " g\nFat",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(width: 50,),
+                  Text(
+                    ((widget.Calories * 0.25)~/4).toString() + " g\nProtein",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(width: 50,),
+                  Text(
+                    ((widget.Calories* 0.05)~/4).toString() + " g\nCarbs",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 18,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              SizedBox(height: 40,),
+              Center(
+                child: Text(
+                  "Your Goal is to " + widget.goal,
+                  style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.cyanAccent,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 20,),
+              showGoal(widget.goal),
+              SizedBox(height: 70,),
+              Center(
+                child: SizedBox(
+                  width: 330,
+                  height: 50,
+                  child: RaisedButton(
+                    onPressed: () {
+                      setState(() {
+                        calculate();
+                      });
+                        Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => Page12(
+                                  weight: widget.weight,
+                                  height: widget.height,
+                                  age: widget.age,
+                                  gender: widget.gender,
+                                  goal: widget.goal,
+                                  protein: protein,
+                                  fats: fats,
+                                  carbs: carbs,
+                                  cal: widget.Calories,
+                                )));
+                    },
+                    child: const Text('Start Tracking',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                    color: const Color(0xFF07D7B7),
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 8,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                ((widget.Calories * 0.7)~/9).toString() + " g\nFat",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(width: 50,),
-              Text(
-                ((widget.Calories * 0.25)~/4).toString() + " g\nProtein",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(width: 50,),
-              Text(
-                ((widget.Calories* 0.05)~/4).toString() + " g\nCarbs",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 18,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-          SizedBox(height: 40,),
-          Center(
-            child: Text(
-              "Your Goal is to " + widget.goal,
-              style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.cyanAccent,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          SizedBox(height: 20,),
-          showGoal(widget.goal),
-          SizedBox(height: 70,),
-          Center(
-            child: SizedBox(
-              width: 330,
-              height: 50,
-              child: RaisedButton(
-                onPressed: () {
-                  setState(() {
-                    calculate();
-                  });
-                    Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => Page12(
-                              weight: widget.weight,
-                              height: widget.height,
-                              age: widget.age,
-                              gender: widget.gender,
-                              goal: widget.goal,
-                              protein: protein,
-                              fats: fats,
-                              carbs: carbs,
-                              cal: widget.Calories,
-                            )));
-                },
-                child: const Text('Start Tracking',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-                color: const Color(0xFF07D7B7),
-              ),
-            ),
-          ),
-        ],
+        ),
       )
     );
   }
