@@ -5,7 +5,7 @@ import '13.0mainPage.dart';
 
 void main() => runApp( MaterialApp(
   debugShowCheckedModeBanner: false,
-  home: page13()
+  home: Home()
 ));
 
 

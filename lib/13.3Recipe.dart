@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app/0Pictures.dart';
 
 class RecipePage extends StatefulWidget {
-  const RecipePage({Key? key}) : super(key: key);
+  RecipePage({Key? key}) : super(key: key);
 
   @override
   _RecipePageState createState() => _RecipePageState();
@@ -129,6 +129,13 @@ class FoodPage extends StatelessWidget {
       child: InkWell(
         child: Container(
           decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black,
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
+                )
+              ],
               borderRadius: BorderRadius.circular(20),
               image: DecorationImage(
                   image: AssetImage(image),

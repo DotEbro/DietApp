@@ -1,6 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+import '13.3Recipe.dart';
+import '0Pictures.dart';
+import '14SingleTimeRecipe.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -344,15 +348,15 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  FoodPage(index: 1, time: "BreakFast", image: "images/breakFast.jpg"),
+                  FoodPage(index: 1, Name: "BreakFast", image: "images/breakFast.jpg"),
                   SizedBox(width: 15,),
-                  FoodPage(index: 2, time: "Lunch", image: "images/lunch.jpeg"),
+                  FoodPage(index: 2, Name: "Lunch", image: "images/lunch.jpeg"),
                   SizedBox(width: 15,),
-                  FoodPage(index: 3, time: "Dinner", image: "images/Dinner.jpg"),
+                  FoodPage(index: 3, Name: "Dinner", image: "images/Dinner.jpg"),
                   SizedBox(width: 15,),
-                  FoodPage(index: 4, time: "Appetizer", image: "images/appetizer.jpeg"),
+                  FoodPage(index: 4, Name: "Appetizer", image: "images/appetizer.jpeg"),
                   SizedBox(width: 15,),
-                  FoodPage(index: 5, time: "Desserts", image: "images/desserts.jpg"),
+                  FoodPage(index: 5, Name: "Desserts", image: "images/desserts.jpg"),
                   SizedBox(width: 15,),
                 ],
               ),
@@ -380,7 +384,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget FoodPage({index, time, image}) {
+  Widget FoodPage({index, Name, image}) {
     return AspectRatio(
       aspectRatio: 1 / 1,
       child: InkWell(
@@ -407,7 +411,7 @@ class _HomePageState extends State<HomePage> {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Text(
-                time,
+                Name,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
@@ -420,6 +424,41 @@ class _HomePageState extends State<HomePage> {
         ),
         onTap: (){
           setState(() {
+            if(index == 1){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => SingleRecipePage(FoodList: breakFastList, Timing: 'BreakFast',)
+                  )
+              );
+            }
+            else if(index == 2){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => SingleRecipePage(FoodList: lunchList, Timing: 'Lunch',)
+                  )
+              );
+            }
+            else if(index == 3){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => SingleRecipePage(FoodList: lunchList, Timing: 'Dinner',)
+                  )
+              );
+            }
+            else if(index == 4){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => SingleRecipePage(FoodList: appetizerList, Timing: 'Appetizer',)
+                  )
+              );
+            }
+            else if(index == 5){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => SingleRecipePage(FoodList: dessertList, Timing: 'Dessert',)
+                  )
+              );
+            }
 
           });
         },

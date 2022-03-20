@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '0Pictures.dart';
+import '14SingleTimeRecipe.dart';
+
 class ActivityPage extends StatefulWidget {
   const ActivityPage({Key? key}) : super(key: key);
 
@@ -538,6 +541,11 @@ class _ActivityPageState extends State<ActivityPage> {
                                       style: TextStyle(color: Color(0xFF07D7B7),),
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => SingleRecipePage(FoodList: breakFastList, Timing: 'Add BreakFast',)
+                                              )
+                                          );
                                         }
                                   )
                                 ]
@@ -614,6 +622,11 @@ class _ActivityPageState extends State<ActivityPage> {
                                       style: TextStyle(color: Color(0xFF07D7B7),),
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => SingleRecipePage(FoodList: lunchList, Timing: 'Add Dinner',)
+                                              )
+                                          );
                                         }
                                   )
                                 ]
@@ -690,6 +703,11 @@ class _ActivityPageState extends State<ActivityPage> {
                                       style: TextStyle(color: Color(0xFF07D7B7),),
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => SingleRecipePage(FoodList: lunchList, Timing: 'Add Dinner',)
+                                              )
+                                          );
                                         }
                                   )
                                 ]
@@ -766,6 +784,11 @@ class _ActivityPageState extends State<ActivityPage> {
                                       style: TextStyle(color: Color(0xFF07D7B7),),
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => SingleRecipePage(FoodList: dessertAndAppetizerList, Timing: 'Add Snack',)
+                                              )
+                                          );
                                         }
                                   )
                                 ]

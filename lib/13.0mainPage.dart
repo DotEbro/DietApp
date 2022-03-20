@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '0Pictures.dart';
 import '13.1Home.dart';
 import '13.2Activity.dart';
 import '13.3Recipe.dart';
