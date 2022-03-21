@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:app/2Weight.dart';
 import '13.0mainPage.dart';
 
-void main() => runApp( MaterialApp(
+void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
-  home: Home()
+  home: page13()
 ));
 
 

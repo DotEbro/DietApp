@@ -214,7 +214,7 @@ const  foodList = const [
   Foods(index: 200, cal: 100, image: "images/Dessert/Tres-Leches-Cake.jpg", name: "Tres Leches Cake"),
   Foods(index: 201, cal: 100, image: "images/Dessert/Vanilla-Cupcakes.jpg", name: "Vanilla Cupcake"),
   Foods(index: 202, cal: 100, image: "images/Dessert/Vanilla-Ice-Cream.jpg", name: "Vanilla IceCream"),
-  Foods(index: 203, cal: 100, image: "images/Dessert/Vanilla-Meringue-Cookies.jpg", name: "Canilla Cookie"),
+  Foods(index: 203, cal: 100, image: "images/Dessert/Vanilla-Meringue-Cookies.jpg", name: "Vanilla Cookie"),
   Foods(index: 204, cal: 100, image: "images/Dessert/White-Chocolate-Raspberry-Cheesecake.jpg", name: "Raspberry Cheesecake"),
   Foods(index: 205, cal: 100, image: "images/BreakFast/40-second-omelet.jpg", name: "40 Second Omelet"),
   Foods(index: 206, cal: 100, image: "images/BreakFast/aloo-paratha.jpg", name: "Aloo Paratha"),
@@ -498,7 +498,7 @@ const dessertList = const [
   Foods(index: 200, cal: 100, image: "images/Dessert/Tres-Leches-Cake.jpg", name: "Tres Leches Cake"),
   Foods(index: 201, cal: 100, image: "images/Dessert/Vanilla-Cupcakes.jpg", name: "Vanilla Cupcake"),
   Foods(index: 202, cal: 100, image: "images/Dessert/Vanilla-Ice-Cream.jpg", name: "Vanilla IceCream"),
-  Foods(index: 203, cal: 100, image: "images/Dessert/Vanilla-Meringue-Cookies.jpg", name: "Canilla Cookie"),
+  Foods(index: 203, cal: 100, image: "images/Dessert/Vanilla-Meringue-Cookies.jpg", name: "Vanilla Cookie"),
   Foods(index: 204, cal: 100, image: "images/Dessert/White-Chocolate-Raspberry-Cheesecake.jpg", name: "Raspberry Cheesecake"),
 ];
 

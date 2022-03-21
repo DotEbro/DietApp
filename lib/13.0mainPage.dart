@@ -118,7 +118,7 @@ class _page13State extends State<page13> {
           color: Color(0xFF07D7B7),
           backgroundColor: Colors.transparent,
           items: items,
-          height: 70,
+          height: 65,
           onTap: (index){
             setState(() {
               this.Index = index;

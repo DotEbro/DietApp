@@ -21,6 +21,7 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   carousel_slider: ^4.0.0
   image_picker: ^0.8.4+10
+  tuple: ^2.0.0
 
 dev_dependencies:
   flutter_test:
